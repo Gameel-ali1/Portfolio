@@ -5,6 +5,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope, FaBookOpen, FaRegMoon, FaRegSun } from "react-icons/fa6";
+import BackgroundGrid from "./BackgroundGrid";
 import "./App.css";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
 
   return (
     <div className={`app-container ${theme}`}> 
+      <BackgroundGrid />
       <nav className="notch-navbar">
         <div className="notch-left">
           <a href="https://github.com/Gameel-ali1" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
