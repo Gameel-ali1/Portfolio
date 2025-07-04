@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;600;700&display=swap');
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Light and dark mode color palettes */
+.app-container.light {
+  --color-bg: #fff;
+  --color-text: #000;
+  --color-accent: #A2D5C6;
+  --color-highlight: #CFFFE2;
+  --color-glow: #A2D5C6;
+}
+.app-container.dark {
+  --color-bg: #000;
+  --color-text: #fff;
+  --color-accent: #fff;
+  --color-highlight: #111;
+  --color-glow: #fff;
+}
+
+body, html {
+  font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+  background: #fff !important;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
+.app-container.dark ~ body,
+.app-container.dark ~ html {
+  background: #000 !important;
+}
+
+.app-container {
+  background: transparent !important;
+  color: var(--color-text);
+  min-height: 100vh;
+  transition: background 0.3s, color 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Remove old navbar styles, will add new notch bar styles below */
+
+/* Notch Bar Styles */
+.notch-navbar {
+  position: fixed;
+  top: 1.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 940px;
+  max-width: 98vw;
+  background: var(--color-bg);
+  box-shadow: 0 2px 12px 0 rgba(234, 234, 234, 0.18), 0 0 4px 4px var(--color-glow);
+  border-radius: 2rem;
+  padding: 0.2rem 1.2rem;
+  gap: 1.2rem;
+  border: none; 
+  font-size: 0.98rem;
+}
+
+.notch-navbar .notch-left,
+.notch-navbar .notch-right {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.notch-navbar .notch-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.notch-navbar a, .notch-navbar button {
+  color: var(--color-text);
+  background: none;
+  border: none;
+  font-size: 0.98rem;
+  cursor: pointer;
+  transition: color 0.2s, box-shadow 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.notch-navbar a:hover, .notch-navbar button:hover {
+  color: var(--color-accent);
+  text-shadow: 0 0 8px var(--color-glow);
+}
+
+.notch-navbar .icon {
+  font-size: 1.15rem;
+  margin-right: 0.4rem;
+}
+
+.notch-navbar .notch-right {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.inner-notch {
+  display: flex;
+  align-items: center;
+  background: var(--color-bg);
+  border-radius: 1.2rem;
+  box-shadow: 0 0 8px 1px var(--color-glow);
+  padding: 0.08rem 0.7rem 0.08rem 0.5rem;
+  font-size: 0.89rem;
+  gap: 0.1rem;
+  /* margin-left: 0.2rem; */
+  margin-right: 0;
+}
+
+.inner-notch .icon {
+  font-size: 1.05rem;
+  color: #fff !important;
+  margin-right: 0.3rem;
+}
+
+.inner-notch .bar-link-text {
+  margin-left: 0.1rem;
+  font-size: 0.92em;
+}
+
+.notch-navbar .notch-right .theme-toggle {
+  font-size: 1.05rem;
+  /* margin-right: 25px; */
+}
+
+.notch-navbar .notch-right a, .notch-navbar .notch-right button {
+  font-size: 0.89rem;
+}
+
+.notch-links {
+  display: flex;
+  align-items: center;
+  margin-left: 0px; /* Space between toggle and group */
+  gap: 1.2rem;      /* Space between Blog and Contact */
+}
+
+@media (max-width: 900px) {
+  .notch-navbar {
+    width: 99vw;
+    min-width: unset;
+    max-width: unset;
+    padding: 0.2rem 0.2rem;
+  }
+  .notch-navbar .notch-center {
+    gap: 1rem;
+  }
+}
+
+main {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 5rem 1rem 2rem 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--color-bg);
+  border-radius: 2rem;
+  /* box-shadow: 0 0 32px 0 rgba(0,0,0,0.10); */
+}
+
+section {
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+body, html, .app-container, main, section, p, h1, h2, h3, h4, h5, h6 {
+  text-align: left !important;
+  font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+}
+
+.app-container.dark .notch-navbar {
+  box-shadow: 0 2px 12px 0 rgba(234, 234, 234, 0.18), 0 0 2px 2px var(--color-glow);
+}
+
+.app-container.light .notch-navbar .icon {
+  color: #000 !important;
+}
+body.light, html.light {
+  background: #fff !important;
+}
+body.dark, html.dark {
+  background: #000 !important;
+}
+

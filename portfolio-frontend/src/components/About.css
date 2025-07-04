@@ -1,0 +1,110 @@
+.about-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  margin-top: 1.2rem;
+  text-align: left;
+  color: var(--color-text);
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: 2.5rem;
+  width: 100%;
+  overflow-x: auto;
+}
+
+.about-image-wrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  min-width: 160px;
+  position: relative;
+  animation: swing-updown 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes swing-updown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+
+.about-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.2);
+  border: 4px solid #000;
+  transition: filter 0.4s, box-shadow 0.4s;
+  box-shadow: 0 0 0 0 transparent;
+}
+
+.app-container.light .about-image {
+  filter: none;
+}
+
+.app-container.light .about-image:hover {
+  filter: grayscale(1) contrast(1.2);
+}
+
+.app-container.dark .about-image {
+  filter: grayscale(1) contrast(1.2);
+}
+
+.app-container.dark .about-image:hover {
+  filter: none;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.typewriter-box {
+  min-height: 3.4rem;
+  height: 3.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.typewriter {
+  font-family: 'Fira Mono', 'Consolas', monospace;
+  font-size: 1.5rem;
+  white-space: pre-line;
+  height: 3.4rem;
+  min-height: 3.4rem;
+  text-align: left;
+  display: flex;
+  align-items: flex-start;
+}
+
+.about-text, .typewriter, p, h2, h1, h3, h4, h5, h6 {
+  text-align: left !important;
+}
+
+@media (max-width: 900px) {
+  .about-section-title {
+    margin-top: 2rem;
+  }
+  .about-container {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .about-image-wrapper {
+    justify-content: flex-start;
+    min-width: 120px;
+    animation: swing-updown 2.2s ease-in-out infinite alternate;
+  }
+  .about-image {
+    width: 120px;
+    height: 120px;
+  }
+} 
