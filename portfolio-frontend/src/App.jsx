@@ -4,6 +4,7 @@ import CertificatesAndCourses from "./components/CertificatesAndCourses";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Blog from "./components/Blog";
+import Footer from "./components/Footer";
 import { FaGithub, FaLinkedin, FaXTwitter, FaEnvelope, FaBookOpen, FaRegMoon, FaRegSun } from "react-icons/fa6";
 import BackgroundGrid from "./BackgroundGrid";
 import "./App.css";
@@ -57,6 +58,7 @@ function App() {
         <section id="contact"><Contact /></section>
         <section id="blog"><Blog /></section>
       </main>
+      <Footer />
     </div>
   );
 }

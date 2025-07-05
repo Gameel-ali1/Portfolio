@@ -1,0 +1,57 @@
+.footer-glass {
+  width: 100%;
+  padding: 1rem 2rem;
+  border-radius: 22px 22px 0 0;
+  font-size: 1rem;
+  z-index: 100;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s, color 0.3s, border 0.3s;
+}
+
+.app-container.light .footer-glass {
+  background: rgba(255,255,255,0.7);
+  border-top: 1.5px solid rgba(0,0,0,0.08);
+  box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.08);
+  color: #222;
+}
+
+.app-container.dark .footer-glass {
+  background: rgba(24, 24, 24, 0.85);
+  border-top: 1.5px solid rgba(255,255,255,0.08);
+  box-shadow: 0 -2px 16px 0 rgba(0,0,0,0.18);
+  color: var(--color-text);
+}
+
+.footer-left, .footer-right {
+  opacity: 0.85;
+}
+
+.footer-link {
+  color: var(--color-accent);
+  text-decoration: underline;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.app-container.light .footer-link {
+  color: #00796b;
+}
+.app-container.dark .footer-link {
+  color: var(--color-accent);
+}
+.footer-link:hover {
+  color: var(--color-text);
+}
+
+@media (max-width: 700px) {
+  .footer-glass {
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
+    text-align: center;
+    border-radius: 18px 18px 0 0;
+  }
+} 
