@@ -255,6 +255,55 @@
 }
 
 /* Responsive Design */
+@media (max-width: 1000px) {
+  .projects-section {
+    padding: 1.5rem 0;
+  }
+  
+  .projects-section-title {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .project-card {
+    padding: 1.2rem;
+  }
+  
+  .project-icon {
+    width: 50px;
+    height: 50px;
+    font-size: 2rem;
+  }
+  
+  .project-title {
+    font-size: 1.1rem;
+  }
+  
+  .project-subtitle {
+    font-size: 0.85rem;
+  }
+  
+  .project-description {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+  
+  .tech-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+  }
+  
+  .project-link {
+    font-size: 0.85rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
 @media (max-width: 900px) {
   .projects-section {
     padding: 1.5rem 0;

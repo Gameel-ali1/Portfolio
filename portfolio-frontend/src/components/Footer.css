@@ -45,6 +45,14 @@
   color: var(--color-text);
 }
 
+@media (max-width: 1000px) {
+  .footer-glass {
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    border-radius: 20px 20px 0 0;
+  }
+}
+
 @media (max-width: 700px) {
   .footer-glass {
     flex-direction: column;

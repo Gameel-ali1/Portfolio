@@ -66,27 +66,116 @@
 }
 
 .typewriter-box {
-  min-height: 3.4rem;
-  height: 3.4rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 2rem;
+  min-height: 3.5em;
+  margin-bottom: 1.3rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
 }
-
 .typewriter {
-  font-family: 'Fira Mono', 'Consolas', monospace;
-  font-size: 1.5rem;
+  width: 100%;
+  display: block;
   white-space: pre-line;
-  height: 3.4rem;
-  min-height: 3.4rem;
-  text-align: left;
-  display: flex;
-  align-items: flex-start;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+.about-text p {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 0;
 }
 
 .about-text, .typewriter, p, h2, h1, h3, h4, h5, h6 {
   text-align: left !important;
+}
+
+.about-content-wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1000px) {
+  .about-content-wrap {
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1.2rem;
+    background: none;
+  }
+}
+@media (max-width: 700px) {
+  .about-content-wrap {
+    padding: 0.5rem 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about-section-title {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+  }
+  
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .about-image-wrapper {
+    order: -1;
+    justify-content: center;
+    min-width: 140px;
+    animation: swing-updown 2.2s ease-in-out infinite alternate;
+  }
+  
+  .about-image {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .about-text {
+    text-align: center;
+    order: 1;
+  }
+  
+  .typewriter-box {
+    order: 2;
+    min-height: 3.5em;
+    margin-bottom: 1.3rem;
+  }
+  
+  .typewriter {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    margin-bottom: 1.2rem;
+  }
+  .about-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .about-text {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding: 0 0.5rem;
+  }
+  .typewriter-box {
+    margin-bottom: 1.2rem;
+  }
+  .typewriter {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+    margin-bottom: 0.7rem;
+  }
+  .about-text p {
+    font-size: 0.98rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
 }
 
 @media (max-width: 900px) {
@@ -95,13 +184,14 @@
     font-size: 1.1rem;
   }
   .about-container {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: 1.5rem;
     padding: 0.5rem 0;
   }
   .about-image-wrapper {
-    justify-content: flex-start;
+    order: -1;
+    justify-content: center;
     min-width: 120px;
     animation: swing-updown 2.2s ease-in-out infinite alternate;
   }
@@ -109,27 +199,64 @@
     width: 120px;
     height: 120px;
   }
+  .about-text {
+    text-align: center;
+    order: 1;
+  }
   .typewriter {
     font-size: clamp(1rem, 4vw, 1.2rem);
     min-height: 2.2rem;
     height: 2.2rem;
+    text-align: center;
   }
   .typewriter-box {
+    order: 2;
     min-height: 2.2rem;
     height: 2.2rem;
     margin-bottom: 1rem;
   }
 }
-@media (max-width: 500px) {
+@media (max-width: 700px) {
   .about-section-title {
     font-size: 1rem;
+  }
+  .about-container {
+    gap: 1rem;
+    padding: 0.3rem 0;
+    max-width: 98vw;
+    padding: 0 0.2rem;
+  }
+  .about-text {
+    padding: 0 0.2rem;
+  }
+  .about-image-wrapper {
+    min-width: 100px;
+  }
+  .about-image {
+    width: 100px;
+    height: 100px;
+  }
+  .typewriter {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    min-height: 1.8rem;
+    height: 1.8rem;
+  }
+  .typewriter-box {
+    min-height: 1.8rem;
+    height: 1.8rem;
+    margin-bottom: 0.8rem;
+  }
+}
+@media (max-width: 500px) {
+  .about-section-title {
+    font-size: 0.95rem;
   }
   .about-image {
     width: 80px;
     height: 80px;
   }
   .typewriter {
-    font-size: clamp(0.9rem, 4vw, 1rem);
+    font-size: clamp(0.85rem, 4vw, 0.95rem);
     min-height: 1.2rem;
     height: 1.2rem;
   }

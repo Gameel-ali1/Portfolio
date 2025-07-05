@@ -48,12 +48,14 @@ function About() {
           />
         </div>
         <div className="about-text">
-          <div className="typewriter-box">
-            <h2 className="typewriter">{displayedText}</h2>
+          <div className="about-content-wrap">
+            <div className="typewriter-box">
+              <h2 className="typewriter">{displayedText}</h2>
+            </div>
+            <p>
+              Computer and Control Systems Engineer, Penetration Tester, and little bit of Web Developer. I am passionate about cybersecurity and penetration testing. Here you can find my certificates, projects, and more about my journey.
+            </p>
           </div>
-          <p>
-            Computer and Control Systems Engineer, Penetration Tester, and little bit of Web Developer. I am passionate about cybersecurity and penetration testing. Here you can find my certificates, projects, and more about my journey.
-          </p>
         </div>
       </div>
     </>
