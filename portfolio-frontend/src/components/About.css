@@ -92,11 +92,13 @@
 @media (max-width: 900px) {
   .about-section-title {
     margin-top: 2rem;
+    font-size: 1.1rem;
   }
   .about-container {
     flex-direction: column-reverse;
     align-items: flex-start;
     gap: 1.5rem;
+    padding: 0.5rem 0;
   }
   .about-image-wrapper {
     justify-content: flex-start;
@@ -106,5 +108,38 @@
   .about-image {
     width: 120px;
     height: 120px;
+  }
+  .typewriter {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    min-height: 2.2rem;
+    height: 2.2rem;
+  }
+  .typewriter-box {
+    min-height: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 1rem;
+  }
+}
+@media (max-width: 500px) {
+  .about-section-title {
+    font-size: 1rem;
+  }
+  .about-image {
+    width: 80px;
+    height: 80px;
+  }
+  .typewriter {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    min-height: 1.2rem;
+    height: 1.2rem;
+  }
+  .typewriter-box {
+    min-height: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .about-container {
+    gap: 0.7rem;
+    padding: 0.2rem 0;
   }
 } 

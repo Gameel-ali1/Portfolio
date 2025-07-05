@@ -13,12 +13,13 @@
   box-shadow: 0 2px 16px 0 rgba(162, 213, 198, 0.609);
   padding: 0.7rem 1.2rem;
   min-width: 0;
-  transition: box-shadow 0.2s;
+  transition: box-shadow 0.3s, transform 0.3s;
   position: relative;
 }
 
 .vertical-card:hover {
   box-shadow: 0 4px 32px 0 rgba(162, 213, 198, 0.982);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .vertical-name {
@@ -78,7 +79,13 @@
 
 .app-container.dark .vertical-card {
   background: #181818;
-  box-shadow: 0 2px 16px 0 rgba(162,213,198,0.08);
+  box-shadow: 0 2px 16px 0 rgba(162,213,198,0.08), 0 0 10px rgba(162,213,198,0.1);
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.app-container.dark .vertical-card:hover {
+  box-shadow: 0 4px 32px 0 rgba(162,213,198,0.3), 0 0 20px rgba(162,213,198,0.2);
+  transform: translateY(-2px) scale(1.02);
 }
 
 .app-container.dark .vertical-name {
@@ -93,12 +100,59 @@
   color: #bbb;
 }
 
+@media (max-width: 900px) {
+  .cert-grid {
+    gap: 1.2rem 1.2rem;
+    margin: 1.2rem 0 0 0;
+  }
+  .vertical-card {
+    padding: 0.5rem 0.5rem;
+  }
+  .vertical-name {
+    font-size: 1rem;
+    min-width: 24px;
+    margin-right: 12px;
+  }
+  .cert-title {
+    font-size: 1rem;
+  }
+  .cert-desc {
+    font-size: 0.92rem;
+  }
+}
 @media (max-width: 700px) {
   .cert-grid {
     grid-template-columns: 1fr;
-    gap: 1.5rem 0;
+    gap: 0.7rem 0;
   }
   .vertical-card {
-    padding: 0.7rem 0.7rem;
+    padding: 0.3rem 0.3rem;
+  }
+  .vertical-name {
+    font-size: 0.95rem;
+    min-width: 18px;
+    margin-right: 8px;
+  }
+  .cert-title {
+    font-size: 0.95rem;
+  }
+  .cert-desc {
+    font-size: 0.88rem;
+  }
+}
+@media (max-width: 500px) {
+  .vertical-card {
+    padding: 0.15rem 0.1rem;
+  }
+  .vertical-name {
+    font-size: 0.85rem;
+    min-width: 12px;
+    margin-right: 4px;
+  }
+  .cert-title {
+    font-size: 0.85rem;
+  }
+  .cert-desc {
+    font-size: 0.8rem;
   }
 } 

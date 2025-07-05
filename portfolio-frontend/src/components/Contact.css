@@ -1,0 +1,373 @@
+.contact-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.contact-section-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  color: var(--color-text);
+  position: relative;
+}
+
+.contact-section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 2px;
+}
+
+.contact-description {
+  color: var(--color-text);
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  text-align: left;
+  line-height: 1.6;
+}
+
+.widget-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  width: 100%;
+}
+
+.contact-widget {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border-radius: 16px;
+  padding: 1.2rem;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 4px 20px rgba(0, 0, 0, 0.1),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-widget:hover {
+  transform: translateY(-2px);
+  box-shadow: 
+    0 8px 30px rgba(0, 0, 0, 0.15),
+    0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-widget.expanded {
+  min-height: 180px;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.widget-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+.widget-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* Light mode: black icons for LinkedIn and X */
+.app-container.light .widget-logo.linkedin,
+.app-container.light .widget-logo.x {
+  filter: brightness(0) invert(0) grayscale(1) contrast(100);
+}
+
+/* Dark mode: white icons for LinkedIn and X */
+.app-container.dark .widget-logo.linkedin,
+.app-container.dark .widget-logo.x {
+  filter: brightness(0) invert(1) grayscale(1) contrast(100);
+}
+
+/* WhatsApp and Email: consistent sizing */
+.widget-logo.whatsapp,
+.widget-logo.email {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  margin: auto;
+}
+
+.widget-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.widget-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 0.2rem 0;
+  color: var(--color-text);
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.widget-description {
+  font-size: 0.8rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  margin: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-indicator {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  background: #34C759;
+  box-shadow: 0 0 8px rgba(52, 199, 89, 0.5);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.status-indicator.online {
+  background: #34C759;
+  box-shadow: 0 0 8px rgba(52, 199, 89, 0.5);
+}
+
+.status-indicator.offline {
+  background: #FF3B30;
+  box-shadow: 0 0 8px rgba(255, 59, 48, 0.5);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+.widget-content {
+  overflow: hidden;
+  will-change: transform;
+}
+
+.contact-details {
+  padding-top: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.contact-value {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  margin: 0 0 1rem 0;
+  font-weight: 500;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.widget-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.widget-btn {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  color: var(--color-text);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  min-width: 80px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.widget-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  filter: brightness(1.1);
+}
+
+.widget-btn:active {
+  transform: translateY(0);
+}
+
+.copy-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.link-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+}
+
+.widget-pattern {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(255, 255, 255, 0.05) 0%,
+    transparent 70%
+  );
+  border-radius: 0 16px 0 0;
+  pointer-events: none;
+}
+
+/* Dark mode adjustments */
+.app-container.dark .contact-widget {
+  background: rgba(24, 24, 24, 0.85);
+  border: 1.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45), 0 1.5px 8px 0 rgba(24,24,24,0.5) inset;
+  backdrop-filter: blur(18px) saturate(120%);
+  -webkit-backdrop-filter: blur(18px) saturate(120%);
+}
+
+.app-container.dark .contact-widget:hover {
+  box-shadow: 0 12px 40px 0 rgba(0,0,0,0.55), 0 2px 12px 0 rgba(24,24,24,0.7) inset;
+}
+
+.app-container.dark .widget-icon {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.app-container.dark .widget-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.app-container.dark .widget-logo {
+  filter: brightness(0) invert(1) grayscale(1) contrast(100);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .widget-grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.8rem;
+  }
+  
+  .contact-widget {
+    padding: 1rem;
+    min-height: 110px;
+  }
+  
+  .contact-widget.expanded {
+    min-height: 160px;
+  }
+  
+  .widget-icon {
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+  
+  .widget-name {
+    font-size: 0.95rem;
+  }
+  
+  .widget-description {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .widget-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .contact-section {
+    padding: 1rem 0;
+  }
+  
+  .contact-section-title {
+    font-size: 1.2rem;
+  }
+  
+  .contact-description {
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .widget-grid {
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+  }
+  
+  .contact-widget {
+    padding: 0.8rem;
+    min-height: 100px;
+  }
+  
+  .contact-widget.expanded {
+    min-height: 140px;
+  }
+  
+  .widget-header {
+    gap: 0.6rem;
+  }
+  
+  .widget-icon {
+    width: 30px;
+    height: 30px;
+    font-size: 1.3rem;
+  }
+  
+  .widget-name {
+    font-size: 0.9rem;
+  }
+  
+  .widget-description {
+    font-size: 0.7rem;
+  }
+  
+  .widget-actions {
+    flex-direction: column;
+  }
+  
+  .widget-btn {
+    width: 100%;
+    padding: 0.5rem;
+  }
+} 

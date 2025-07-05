@@ -47,15 +47,15 @@
 .app-container.light {
   --color-bg: #fff;
   --color-text: #000;
-  --color-accent: #A2D5C6;
-  --color-highlight: #CFFFE2;
+  --color-accent: #86b498;
+  --color-highlight: #86b498;
   --color-glow: #A2D5C6;
 }
 .app-container.dark {
   --color-bg: #000;
   --color-text: #fff;
-  --color-accent: #fff;
-  --color-highlight: #111;
+  --color-accent: #cccccc;
+  --color-highlight: #cccccc;
   --color-glow: #fff;
 }
 
@@ -190,14 +190,66 @@ body, html {
 
 @media (max-width: 900px) {
   .notch-navbar {
-    width: 99vw;
+    width: 100vw;
     min-width: unset;
     max-width: unset;
     padding: 0.2rem 0.2rem;
+    font-size: 0.92rem;
+    border-radius: 1.2rem;
   }
-  .notch-navbar .notch-center {
-    gap: 1rem;
+  .notch-navbar .notch-left,
+  .notch-navbar .notch-right {
+    gap: 0.4rem;
   }
+  .notch-links {
+    gap: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  main {
+    max-width: 99vw;
+    padding: 4.2rem 0.2rem 1.2rem 0.2rem;
+    border-radius: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .notch-navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0.1rem 0.1rem;
+    font-size: 0.89rem;
+  }
+  .notch-navbar .notch-left,
+  .notch-navbar .notch-right {
+    flex-direction: row;
+    justify-content: center;
+    gap: 0.2rem;
+  }
+  .notch-links {
+    flex-direction: column;
+    gap: 0.2rem;
+    margin-left: 0;
+  }
+  main {
+    padding: 3.2rem 0.1rem 0.7rem 0.1rem;
+    border-radius: 0.7rem;
+  }
+}
+
+@media (max-width: 500px) {
+  .notch-navbar {
+    font-size: 0.82rem;
+    padding: 0.05rem 0.05rem;
+    border-radius: 0.5rem;
+  }
+  main {
+    padding: 2.2rem 0.05rem 0.3rem 0.05rem;
+    border-radius: 0.3rem;
+  }
+}
+
+body, html {
+  overflow-x: hidden;
 }
 
 main {

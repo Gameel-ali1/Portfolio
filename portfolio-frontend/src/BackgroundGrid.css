@@ -31,4 +31,10 @@
 .app-container.dark .background-grid .grid-box.filled {
   background: #777777bd;
   border-color: #989898;
+}
+
+@media (max-width: 500px) {
+  .background-grid {
+    opacity: 0.12;
+  }
 } 
