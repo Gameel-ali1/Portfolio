@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaCalendar, FaUser, FaHeart, FaComment, FaEye, FaPlus, FaFilter, FaArrowRight } from "react-icons/fa";
 import { FaMagnifyingGlass } from "react-icons/fa6";
+import config from "../config";
 import "./Blogs.css";
 
 function Blogs({ searchTerm = "", setSearchTerm = () => {} }) {
@@ -72,7 +73,7 @@ function Blogs({ searchTerm = "", setSearchTerm = () => {} }) {
     try {
       setLoading(true);
       console.log('Fetching writeups from backend...');
-      const response = await fetch('http://localhost:5000/api/writeups');
+      const response = await fetch(`${config.API_URL}/api/writeups`);
       console.log('Response status:', response.status);
       if (!response.ok) {
         throw new Error('Failed to fetch writeups');
@@ -91,7 +92,7 @@ function Blogs({ searchTerm = "", setSearchTerm = () => {} }) {
   const handleCreateWriteup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('http://localhost:5000/api/writeups', {
+      const response = await fetch(`${config.API_URL}/api/writeups`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,7 +115,7 @@ function Blogs({ searchTerm = "", setSearchTerm = () => {} }) {
 
   const handleLike = async (writeupId) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/writeups/${writeupId}/like`, {
+      const response = await fetch(`${config.API_URL}/api/writeups/${writeupId}/like`, {
         method: 'POST',
       });
       if (response.ok) {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaBookOpen, FaArrowRight } from "react-icons/fa";
+import config from "../config";
 import "./Blog.css";
 
 function Blog() {
@@ -16,7 +17,7 @@ function Blog() {
   const fetchWriteups = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:5000/api/writeups');
+      const response = await fetch(`${config.API_URL}/api/writeups`);
       if (!response.ok) {
         throw new Error('Failed to fetch writeups');
       }

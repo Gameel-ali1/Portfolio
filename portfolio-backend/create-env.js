@@ -1,9 +1,17 @@
 const fs = require('fs');
 const path = require('path');
 
-const envContent = `MONGODB_URI=mongodb+srv://jimmyex04:F6JCZPV0AOy2mryB@portfolio.fqo72vt.mongodb.net/?retryWrites=true&w=majority&appName=Portfolio
+const envContent = `# MongoDB Connection String - Replace with your actual MongoDB URI
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/database?retryWrites=true&w=majority
+
+# Server Port (optional, defaults to 5000)
 PORT=5000
+
+# Environment
 NODE_ENV=development
+
+# Add your actual MongoDB URI and other environment variables here
+# Make sure to replace the placeholder values with your actual credentials
 `;
 
 const envPath = path.join(__dirname, '.env');
