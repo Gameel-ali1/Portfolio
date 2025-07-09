@@ -1,30 +1,268 @@
-.about-section-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 0.3rem;
-  margin-top: 1.2rem;
-  text-align: left;
-  color: var(--color-text);
+.about-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.about-container {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  gap: 2.5rem;
+.about-typewriter-row {
   width: 100%;
-  overflow-x: auto;
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 50px;
+  min-height: 30px; /* Ensure minimum height */
+}
+
+.about-content-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.about-text {
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
 .about-image-wrapper {
   flex-shrink: 0;
-  display: flex;
-  align-items: flex-start;
-  justify-content: flex-end;
-  min-width: 160px;
+  width: 180px;
+  margin: 0;
+  padding: 0;
   position: relative;
-  animation: swing-updown 2.2s ease-in-out infinite alternate;
+  top: -50px; /* Pull the image up more to align with section start */
+  align-self: flex-start;
+  animation: float 3s ease-in-out infinite;
 }
+
+.about-image {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+  object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .about-image-wrapper {
+    width: 140px;
+  }
+}
+
+/* Adjust mobile styles to maintain proper spacing */
+@media (max-width: 700px) {
+  .about-content-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 0;
+  }
+  
+  .about-image-wrapper {
+    width: 120px;
+    top: 0; /* Reset the negative margin on mobile */
+    animation: float 3s ease-in-out infinite; /* Keep animation on mobile */
+  }
+  
+  .about-text {
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-image-wrapper {
+    width: 100px;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  
+  .about-image-wrapper {
+    order: -1;
+    justify-content: center;
+    min-width: 140px;
+    animation: swing-updown 2.2s ease-in-out infinite alternate;
+  }
+  
+  .about-image {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .about-text {
+    text-align: center;
+    order: 1;
+  }
+  
+  .typewriter-box {
+    order: 2;
+    min-height: 3.5em;
+    margin-bottom: 1.3rem;
+  }
+  
+  .typewriter {
+    font-size: clamp(0.95rem, 3vw, 1.05rem);
+    margin-bottom: 1.2rem;
+  }
+  .about-container {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+  .about-text {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    padding: 0 0.5rem;
+  }
+  .typewriter-box {
+    margin-bottom: 1.2rem;
+  }
+  .typewriter {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+    margin-bottom: 0.7rem;
+  }
+  .about-text p {
+    font-size: 0.98rem;
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .about-section-title {
+    margin-top: 2rem;
+    font-size: 1.1rem;
+  }
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0;
+  }
+  .about-image-wrapper {
+    order: -1;
+    justify-content: center;
+    min-width: 120px;
+    animation: swing-updown 2.2s ease-in-out infinite alternate;
+  }
+  .about-image {
+    width: 120px;
+    height: 120px;
+  }
+  .about-text {
+    text-align: center;
+    order: 1;
+  }
+  .typewriter {
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    min-height: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+  }
+  .typewriter-box {
+    order: 2;
+    min-height: 2.2rem;
+    height: 2.2rem;
+    margin-bottom: 1rem;
+  }
+}
+/* --- BASE STYLES (Desktop first) --- */
+.typewriter-box {
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.typewriter {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  width: 100%;
+  display: block;
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+.about-text p {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 0;
+}
+
+.about-text, .about-content-wrap, .about-text p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* --- RESPONSIVE OVERRIDES --- */
+@media (max-width: 700px) {
+  .typewriter-box {
+    min-height: 1.8rem;
+    height: 1.8rem;
+    margin-bottom: 1.4rem; /* slightly more for mobile */
+  }
+  .typewriter {
+    font-size: clamp(0.85rem, 4vw, 0.98rem);
+    min-height: 1.8rem;
+    height: 1.8rem;
+    margin-bottom: 0.9rem;
+  }
+  .about-text p {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
+  }
+}
+@media (max-width: 500px) {
+  .typewriter-box {
+    min-height: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 1.3rem;
+  }
+  .typewriter {
+    font-size: clamp(0.8rem, 5vw, 0.92rem);
+    min-height: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  .about-text p {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+} 
+
+/* Add a small negative margin to pull content up if needed */
+.about-container-grid {
+  margin-top: 0 !important;
+} 
 
 @keyframes swing-updown {
   0% { transform: translateY(0); }
@@ -41,6 +279,10 @@
   border: 4px solid #000;
   transition: filter 0.4s, box-shadow 0.4s;
   box-shadow: 0 0 0 0 transparent;
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
 }
 
 .app-container.light .about-image {
@@ -63,30 +305,6 @@
   flex: 1;
   text-align: left;
   min-width: 0;
-}
-
-.typewriter-box {
-  min-height: 3.5em;
-  margin-bottom: 1.3rem;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-}
-.typewriter {
-  width: 100%;
-  display: block;
-  white-space: pre-line;
-  word-break: break-word;
-  overflow-wrap: anywhere;
-  margin-bottom: 1.2rem;
-  position: relative;
-  z-index: 1;
-}
-.about-text p {
-  margin-top: 1.2rem;
-  margin-bottom: 1.2rem;
-  position: relative;
-  z-index: 0;
 }
 
 .about-text, .typewriter, p, h2, h1, h3, h4, h5, h6 {
@@ -216,57 +434,211 @@
     margin-bottom: 1rem;
   }
 }
+/* --- BASE STYLES (Desktop first) --- */
+.typewriter-box {
+  min-height: auto;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.typewriter {
+  font-size: clamp(0.9rem, 3vw, 1rem);
+  width: 100%;
+  display: block;
+  white-space: pre-line;
+  word-break: break-word;
+  overflow-wrap: anywhere;
+  margin: 0;
+  padding: 0;
+  line-height: 1.2;
+  position: relative;
+  z-index: 1;
+}
+.about-text p {
+  margin-top: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 0;
+}
+
+.about-text, .about-content-wrap, .about-text p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* --- RESPONSIVE OVERRIDES --- */
 @media (max-width: 700px) {
-  .about-section-title {
-    font-size: 1rem;
-  }
-  .about-container {
-    gap: 1rem;
-    padding: 0.3rem 0;
-    max-width: 98vw;
-    padding: 0 0.2rem;
-  }
-  .about-text {
-    padding: 0 0.2rem;
-  }
-  .about-image-wrapper {
-    min-width: 100px;
-  }
-  .about-image {
-    width: 100px;
-    height: 100px;
-  }
-  .typewriter {
-    font-size: clamp(0.9rem, 4vw, 1rem);
-    min-height: 1.8rem;
-    height: 1.8rem;
-  }
   .typewriter-box {
     min-height: 1.8rem;
     height: 1.8rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 1.4rem; /* slightly more for mobile */
+  }
+  .typewriter {
+    font-size: clamp(0.85rem, 4vw, 0.98rem);
+    min-height: 1.8rem;
+    height: 1.8rem;
+    margin-bottom: 0.9rem;
+  }
+  .about-text p {
+    margin-top: 1.2rem;
+    margin-bottom: 1.2rem;
   }
 }
 @media (max-width: 500px) {
-  .about-section-title {
-    font-size: 0.95rem;
-  }
-  .about-image {
-    width: 80px;
-    height: 80px;
-  }
-  .typewriter {
-    font-size: clamp(0.85rem, 4vw, 0.95rem);
-    min-height: 1.2rem;
-    height: 1.2rem;
-  }
   .typewriter-box {
     min-height: 1.2rem;
     height: 1.2rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1.3rem;
   }
-  .about-container {
-    gap: 0.7rem;
-    padding: 0.2rem 0;
+  .typewriter {
+    font-size: clamp(0.8rem, 5vw, 0.92rem);
+    min-height: 1.2rem;
+    height: 1.2rem;
+    margin-bottom: 0.8rem;
+  }
+  .about-text p {
+    margin-top: 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+} 
+
+/* Add a small negative margin to pull content up if needed */
+.about-container-grid {
+  margin-top: 0 !important;
+} 
+
+@keyframes swing-updown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.about-image {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.2);
+  border: 4px solid #000;
+  transition: filter 0.4s, box-shadow 0.4s;
+  box-shadow: 0 0 0 0 transparent;
+  background: #fff;
+  box-shadow: 0 4px 24px 0 rgba(0,0,0,0.10), 0 1.5px 6px 0 rgba(0,0,0,0.08);
+  position: relative;
+  z-index: 2;
+}
+
+.app-container.light .about-image {
+  filter: none;
+}
+
+.app-container.light .about-image:hover {
+  filter: grayscale(1) contrast(1.2);
+}
+
+.app-container.dark .about-image {
+  filter: grayscale(1) contrast(1.2);
+}
+
+.app-container.dark .about-image:hover {
+  filter: none;
+}
+
+.about-text {
+  flex: 1;
+  text-align: left;
+  min-width: 0;
+}
+
+.about-text, .typewriter, p, h2, h1, h3, h4, h5, h6 {
+  text-align: left !important;
+}
+
+.about-content-wrap {
+  width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1000px) {
+  .about-content-wrap {
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 1.2rem;
+    background: none;
+  }
+}
+@media (max-width: 700px) {
+  .about-content-wrap {
+    padding: 0.5rem 0.3rem;
+    margin-bottom: 1.2rem;
+  }
+} 
+
+/* Adjust for mobile */
+@media (max-width: 700px) {
+  .about-typewriter-row,
+  .typewriter-box,
+  .typewriter {
+    min-height: 25px; /* Slightly smaller on mobile */
+  }
+}
+
+@media (max-width: 500px) {
+  .about-typewriter-row,
+  .typewriter-box,
+  .typewriter {
+    min-height: 20px; /* Even smaller on mobile */
+  }
+} 
+
+/* Mobile Styles */
+@media (max-width: 700px) {
+  .typewriter {
+    line-height: 2; /* Increased line spacing only on mobile */
+  }
+
+  .about-content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .about-image-wrapper {
+    order: -1; /* Move image before text on mobile */
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Take full width to allow center alignment */
+  }
+
+  .about-image {
+    width: 120px; /* Fixed width for the actual image */
+    height: 120px;
+  }
+
+  .about-text {
+    order: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .typewriter {
+    line-height: 2.2; /* Even more line spacing for smallest screens */
   }
 } 

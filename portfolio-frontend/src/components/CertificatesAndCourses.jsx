@@ -46,8 +46,8 @@ const certificates = [
 
 function CertificatesAndCourses() {
   return (
-    <div>
-      <h2>Certificates & Courses</h2>
+    <div className="certificates-container">
+      <div className="section-title">CERTIFICATES & COURSES</div>
       <p>
         My journey in IT and cybersecurity is marked by a passion for continuous learning and hands-on achievement. Here are some of the certifications and courses that have shaped my expertise:
       </p>

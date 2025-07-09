@@ -43,8 +43,8 @@ function Contact() {
   ];
 
   return (
-    <div className="contact-section">
-      <h2 className="contact-section-title">Contact</h2>
+    <div className="contact-container">
+      <div className="section-title">CONTACT</div>
       <p className="contact-description">
         Click any widget to connect instantly.
       </p>

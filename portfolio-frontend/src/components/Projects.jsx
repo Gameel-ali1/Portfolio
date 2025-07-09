@@ -44,8 +44,8 @@ function Projects() {
   ];
 
   return (
-    <div className="projects-section">
-      <h2 className="projects-section-title">Projects</h2>
+    <div className="projects-container">
+      <div className="section-title">PROJECTS</div>
       <div className="projects-grid">
         {projects.map((project) => (
           <div
