@@ -1,11 +1,16 @@
 {
-  "buildCommand": "cd portfolio-frontend && npm install && npm run build",
-  "outputDirectory": "portfolio-frontend/dist",
+  "buildCommand": "npm install && npm run build",
+  "outputDirectory": "dist",
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/api/index.js"
+      "destination": "/portfolio-backend/api/index.js"
     }
   ],
-  "framework": "vite"
+  "framework": "vite",
+  "functions": {
+    "portfolio-backend/api/index.js": {
+      "runtime": "nodejs18.x"
+    }
+  }
 } 
