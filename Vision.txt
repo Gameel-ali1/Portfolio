@@ -1,0 +1,2 @@
+now in light mode use the secondary color with black to be #031c26
+and in dark mode use the secondary color with white to be #247c6d
