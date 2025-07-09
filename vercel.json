@@ -4,13 +4,8 @@
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "/portfolio-backend/api/index.js"
+      "destination": "/api/index.js"
     }
   ],
-  "framework": "vite",
-  "functions": {
-    "portfolio-backend/api/index.js": {
-      "runtime": "nodejs18.x"
-    }
-  }
+  "framework": "vite"
 } 

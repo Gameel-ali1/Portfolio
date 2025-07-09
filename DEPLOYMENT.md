@@ -6,10 +6,11 @@ This project is structured as a monorepo with both frontend and backend in the s
 
 ```
 Portfolio/
-├── src/                    # Frontend source code (moved from portfolio-frontend/)
+├── src/                    # Frontend source code
 ├── public/                 # Frontend public assets
-├── portfolio-backend/      # Backend API code
-├── package.json           # Frontend dependencies and scripts
+├── api/                    # Backend API code (for Vercel serverless functions)
+├── portfolio-backend/      # Original backend code (for reference)
+├── package.json           # Combined dependencies for frontend and backend
 ├── vite.config.js         # Vite configuration
 ├── vercel.json           # Vercel deployment configuration
 └── README.md
@@ -29,8 +30,8 @@ The frontend is configured to build from the root directory:
 
 The backend is deployed as serverless functions:
 
-1. **Function Path**: `portfolio-backend/api/index.js`
-2. **Runtime**: Node.js 18.x
+1. **Function Path**: `api/index.js`
+2. **Runtime**: Node.js (auto-detected)
 3. **API Routes**: All `/api/*` requests are routed to the backend
 
 ## Environment Variables
